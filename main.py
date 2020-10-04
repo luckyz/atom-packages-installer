@@ -20,7 +20,6 @@ with open(FILE_INPUT, "r") as json_file:
     for index in range(len(source)):
         package_name = source[index]["name"]
         packages.append(package_name)
-    print(packages)
 json_file.close()
 
 with open(FILE_OUTPUT, "w") as output:
@@ -28,4 +27,4 @@ with open(FILE_OUTPUT, "w") as output:
         output.write(package + "\n")
 output.close()
 
-system("sudo pip install -r {}".format(FILE_OUTPUT))
+system("apm install -r {}".format(FILE_OUTPUT))
