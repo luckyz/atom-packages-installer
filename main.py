@@ -11,7 +11,6 @@ FILEOPENOPTIONS = (("JSON files", "*.json"), ("All files", "*.*"))
 root = tk.Tk()
 root.withdraw()
 FILE_INPUT = filedialog.askopenfilename(initialdir=DEFAULT_DIR, title="Select file", filetypes=FILEOPENOPTIONS)
-FILE_OUTPUT = "packages.txt"
 
 with open(FILE_INPUT, "r") as json_file:
     dir_path = os.path.dirname(json_file.name)
@@ -22,9 +21,4 @@ with open(FILE_INPUT, "r") as json_file:
         packages.append(package_name)
 json_file.close()
 
-with open(FILE_OUTPUT, "w") as output:
-    for package in packages:
-        output.write(package + "\n")
-output.close()
-
-system("apm install -r {}".format(FILE_OUTPUT))
+system("apm install {}".format(" ".join(packages)))
