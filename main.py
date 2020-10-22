@@ -16,8 +16,8 @@ with open(FILE_INPUT, "r") as json_file:
     dir_path = os.path.dirname(json_file.name)
     source = json.load(json_file)
     packages = []
-    for index in range(len(source)):
-        package_name = source[index]["name"]
+    for index in range(len(source["packages"])):
+        package_name = source["packages"][index]
         packages.append(package_name)
 json_file.close()
 
