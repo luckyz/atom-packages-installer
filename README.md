@@ -8,6 +8,9 @@ Getting started
 ---------------
 
 Firstly, you should backup your atom packages settings
+
+If you haven't installed [import-export](https://atom.io/packages/import-export), run `apm install import-export` or search in Atom IDE menu `File > Settings > Install` and type `import-export`
+
 Then, you execute `main.py` in your fresh Atom IDE installation
 
 
